@@ -1,0 +1,110 @@
+let mapleader=' '
+
+set hlsearch
+set incsearch
+set ignorecase
+set smartcase
+set showmode
+set number
+" set relativenumber
+set scrolloff=3
+set history=100000
+set clipboard=unnamed
+
+" Quit normal mode
+nnoremap <Leader>q  :q<CR>
+nnoremap <Leader>Q  :qa!<CR>
+
+" Move half page faster
+nnoremap <Leader>d  <C-d>
+nnoremap <Leader>u  <C-u>
+
+" Auto indent pasted text
+" nnoremap p p=`]<C-o>
+
+" Insert mode shortcut
+inoremap <C-h> <Left>
+inoremap <C-j> <Down>
+inoremap <C-k> <Up>
+inoremap <C-l> <Right>
+inoremap <C-a> <Home>
+inoremap <C-e> <End>
+inoremap <C-d> <Delete>
+
+" Quit insert mode
+inoremap jj <Esc>
+inoremap jk <Esc>
+inoremap kk <Esc>
+
+" Quit visual mode
+vnoremap v <Esc>
+
+" Move to the start of line
+nnoremap H ^
+
+" Move to the end of line
+nnoremap L $
+
+" Redo
+nnoremap U <C-r>
+
+vnoremap H ^
+vnoremap L $
+
+" quit ==> close current window
+nnoremap <Space>q <C-W>w
+
+" Window operation
+nnoremap <Leader>ww <C-W>w
+nnoremap <Leader>wd <C-W>c
+nnoremap <Leader>wj <C-W>j
+nnoremap <Leader>wk <C-W>k
+nnoremap <Leader>wh <C-W>h
+nnoremap <Leader>wl <C-W>l
+nnoremap <Leader>ws <C-W>s
+nnoremap <Leader>w- <C-W>s
+nnoremap <Leader>wv <C-W>v
+nnoremap <Leader>w\| <C-W>v
+
+" Tab operation
+nnoremap tn gt
+nnoremap tp gT
+
+" 弹出输入框，可以跳到指定类
+" nnoremap <Space>gc :action GotoClass<CR>
+nnoremap gc :action GotoClass<CR>
+" 弹出输入框，跳转到指定操作
+" nnoremap <Space>ga :action GotoAction<CR>
+nnoremap ga :action GotoAction<CR>
+" 跳转到定义
+" nnoremap <Space>gd :action GotoDeclaration<CR>
+nnoremap gd :action GotoDeclaration<CR>
+" 跳转到实现
+" nnoremap <Space>gi :action GotoImplementation<CR>
+nnoremap gi :action GotoImplementation<CR>
+" 跳转到指定的文件
+nnoremap gf :action GotoFile<CR>
+" 跳转到方法的声明
+" nnoremap <Space>gs :action GotoSuperMethod<CR>
+nnoremap gs :action GotoSuperMethod<CR>
+" 跳转到测试
+" nnoremap <Space>gt :action GotoTest<CR>
+nnoremap gt :action GotoTest<CR>
+" 跳转到变量的声明
+" nnoremap <Space>gS :action GotoSymbol<CR>
+nnoremap gS :action GotoSymbol<CR>
+
+" 查找使用
+" nnoremap <Space>fu :action FindUsages<CR>
+nnoremap fu :action FindUsages<CR>
+" 显示使用
+" nnoremap <Space>su :action ShowUsages<CR>
+nnoremap su :action ShowUsages<CR>
+
+" 前进，相当似于eclipse中的alt+方向右键
+nnoremap gF :action Forward<CR>
+" 后退，相当于eclipse中的alt+方向左键
+nnoremap gb :action Back<CR>
+" comment
+nnoremap ;; :action CommentByLineComment<CR>
+vnoremap ;; :action CommentByBlockComment<CR>

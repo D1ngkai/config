@@ -1,24 +1,8 @@
-let mapleader=' '
-
-set hlsearch
-set incsearch
+set clipboard=unnamed
 set ignorecase
 set smartcase
-set showmode
-set number
-" set relativenumber
-set scrolloff=3
-set history=100000
-set clipboard=unnamed
-
-" Insert mode shortcut
-inoremap <C-h> <Left>
-inoremap <C-j> <Down>
-inoremap <C-k> <Up>
-inoremap <C-l> <Right>
-inoremap <C-a> <Home>
-inoremap <C-e> <End>
-inoremap <C-d> <Delete>
+set showmatch
+set hlsearch
 
 " Quit insert mode
 inoremap jj <Esc>
@@ -29,32 +13,34 @@ inoremap kk <Esc>
 vnoremap v <Esc>
 
 " Move to the start of line
+" nnoremap <C-a> ^
+" vnoremap <C-a> ^
 nnoremap H ^
+vnoremap H ^
 
 " Move to the end of line
+" nnoremap <C-e> $
+" vnoremap <C-e> $
 nnoremap L $
-
-" Redo
-nnoremap U <C-r>
-
-vnoremap H ^
 vnoremap L $
 
-" quit ==> close current window
-nnoremap <Space>q <C-W>w
 
-" Window operation
-nnoremap <Leader>ww <C-W>w
-nnoremap <Leader>wd <C-W>c
-nnoremap <Leader>wj <C-W>j
-nnoremap <Leader>wk <C-W>k
-nnoremap <Leader>wh <C-W>h
-nnoremap <Leader>wl <C-W>l
-nnoremap <Leader>ws <C-W>s
-nnoremap <Leader>w- <C-W>s
-nnoremap <Leader>wv <C-W>v
-nnoremap <Leader>w\| <C-W>v
+" navigation
+map gn :xcmenucmd Go Forward<CR>
+map gb :xcmenucmd Go Back<CR>
+map gh :xccmd jumpToNextCounterpart<CR>
+map gs viw:xccmd findSelectedTextInWorkspace<CR>
+" 折叠
+nnoremap gzz :xccmd fold<CR>
+" 展开
+nnoremap gza :xccmd unfold<CR>
 
-" Tab operation
-nnoremap tn gt
-nnoremap tp gT
+nmap G Gzz
+nmap n nzz
+nmap N Nzz
+nmap <C-d> <C-d>zz
+nmap <C-u> <C-u>zz
+nmap <C-o> <C-o>zz
+
+" Tab键匹配符号
+nnoremap <tab> %
